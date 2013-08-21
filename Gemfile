@@ -16,8 +16,11 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'google-api-client'
 
 group :test do
   gem 'faker'
   gem 'rspec'
 end
+
+gem 'github_api'
