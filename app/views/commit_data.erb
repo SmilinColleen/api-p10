@@ -1,6 +1,13 @@
 <div class="container">
-  <h2>commits for SmilinColleen and Tweet-Later</h2>
+  <h2>commits for SmilinColleen and Tweet-Later Repo</h2>
+  <h3>Total commits: <%= @commits.length %></h3>
   <% @commits.each do |commit| %>
+    <p><%=commit[:commit][:message]%></p>
     <a href='<%= commit[:html_url] %>'><%= commit[:html_url] %></a><br>
+    <br>
+ <!--    <p>Gravatar ID <%= commit[:gravatar_id] %></p>
+    <a href='<%= commit[:comments_url] %>'><%= commit[:comments_url] %></a><br>
+    <p>message <%= commit[:message] %></p>
+    <p>committer <%= commit[:committer] %></p> -->
   <% end %>
 </div>

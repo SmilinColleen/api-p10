@@ -6,12 +6,25 @@ end
 get '/commits' do
   @user = Github.new
   @commits = @user.repos.commits.all  'SmilinColleen', 'Tweet-Later'
-  p @commits
+  p '*' * 80
+  pp @commits.first
+  # p params[:html_url]
 
   erb :commit_data
 end
 
+get '/following' do
+  @github = Github.new
+  @follows = @github.users.followers.following 'SmilinColleen'
+  # @follows = @github.users.followers.following? 'SmilinColleen'
+  p '*' * 50
+  pp @follows.first
 
+  erb :following
+end
+
+
+#params for commits
 #<Github::ResponseWrapper @body="[Hashie::Mash author=Hashie::Mash avatar_url=
 #<"https://2.gravatar.com/avatar/710ca389c882790a8f97a09c75133b51?d=https%3A%2
 #<F%2Fidenticons.github.com%2Fe6d5cd4386fa6ea226045205870b49ca.png"
@@ -384,3 +397,5 @@ end
 #<sha="0a2f6ed4d413083773833e21d8ca7200b0338ac6"
 #<url="https://api.github.com/repos/SmilinColleen/Tweet-
 #<Later/commits/0a2f6ed4d413083773833e21d8ca7200b0338ac6">]">
+
+

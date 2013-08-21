@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>who SmilinColleen is following</h2>
+  <% @follows.each do |user| %>
+    <img src="<%= user[:avatar_url] %>">
+    <a href='<%= user[:html_url] %>'><%= user[:html_url] %></a><br>
+  <% end %>
+</div>
