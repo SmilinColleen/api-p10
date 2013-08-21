@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>commits for SmilinColleen and Tweet-Later</h2>
+  <% @commits.each do |commit| %>
+    <a href='<%= commit[:html_url] %>'><%= commit[:html_url] %></a><br>
+  <% end %>
+</div>
